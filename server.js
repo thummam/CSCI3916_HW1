@@ -4,15 +4,20 @@ const app = express();
 
 //creating a route hat listensfor GET requests on the root URL
 app.post('/', (req, res) => {
-    const acceptHeader = req.get('accept');
+    const acceptHeader = req.get('Accept');
    
+
+    if (acceptHeader){
+        res.setHeader('Accept',acceptHeader)
+    }
+
     const responseBody= {
     acceptHeader:acceptHeader,
     ...req.body
     }
 
 
-    res.json(esponseBody)
+    res.json(responseBody)
 
 });
 const port = process.env.PORT || 3000;

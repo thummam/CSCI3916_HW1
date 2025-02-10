@@ -3,10 +3,10 @@ const chaiHttp = require('chai-http');
 const {expect} = chai;
 const server = require ('../server');
 
-chai.use(chaihHttp);
+chai.use(chaiHttp);
 
 describe('POST /', () => {
-    it('should returna JSOn object withthe accept header', (done) => {
+    it('should return JSON object with the accept header', (done) => {
         const sampleBody ={message: "Hello, World!"};
 
         chai
